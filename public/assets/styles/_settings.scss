@@ -1,0 +1,253 @@
+// -------------------------- REGLAGES ROOT PAR DEFAUT-----------------------------//
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    // color-scheme: light dark;
+    color: #ffffffde;
+    background-color: #18191a;
+  
+    /* Optimisation du rendu des textes */
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+  }
+
+  /* -------------------------- VARIABLES DE COULEUR -----------------------------*/
+
+:root {
+    --couleur-test: #4285f4;
+    --croissant: #D96F15;
+  }
+  
+  /* -------------------------- DEFINITION DE COMPORTEMENTS CSS -----------------------------*/
+  
+  @mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+// -------------------------- REGLAGES CORPS DE LA PAGE -----------------------------//
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+  
+// -------------------------- IMPORTATION DES POLICES -----------------------------//
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('./assets/fonts/OpenSans.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Ahay Hore';
+    src: url('./assets/fonts/AhayHore-DOMaE.ttf');
+
+  }
+
+  @font-face {
+    font-family: 'Loftygoals';
+    src: url('./assets/fonts/LoftygoalsRegular.otf');
+
+  }
+
+  @font-face {
+    font-family: 'Typoster';
+    src: url('./assets/fonts/COCOMILK-2OVPX.OTF');
+
+  }
+  
+
+  // -------------------------- TITRES -----------------------------//
+
+// -------------------------- Titres de section -----------------------------//
+  .title{
+    @include flexColumn;
+    width: 100vw;
+  }
+
+// -------------------------- Autres Titres -----------------------------//
+  
+  h2:not(.section-title){
+    // color: var(--croissant);
+    text-transform: uppercase;
+  }
+
+  h2{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-bottom: 1rem;
+    // max-width: 200px;
+  }
+
+  h3{
+    text-align: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h4 {
+    font-size: 2rem;
+    font-family: 'Montserrat', serif;
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+
+  h5{
+    font-weight: 400;
+    font-family: 'Open Sans', serif;
+  }
+
+  h6:not(.footer-title){
+    margin: 0;
+    padding: 0rem 0 2rem 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .section-title:not(.clients-title){
+    margin-top: 2rem;
+    font-family: 'Ahay Hore';
+    text-align: center;
+    width: 54vw;
+  }
+
+  .gradient-title{
+    background-image: linear-gradient(to right, #ffffff,#ffffff ,#ffffff);
+     -webkit-background-clip: text;
+     -moz-background-clip: text;
+     background-clip: text;
+     color: transparent;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     margin-top: 1rem;
+     font-size: 0.5rem;
+  }
+  
+    .transformed-title{
+      width: 78%;
+      min-width: 100px;
+      padding:  0.2em 3em;
+      margin-bottom: 0rem;
+      z-index: 1;
+    }
+
+
+@media screen and (min-width: 1024px) {
+  .transformed-title{
+    width: 50%;
+  }
+}
+  // -------------------------- TEXTES -----------------------------//
+  
+  p{
+    font-family: 'Open Sans';
+    font-weight: 300;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 2rem ;
+    text-align: center;
+  }
+
+  .marketing-description{
+    text-align: center;
+    max-width: 75vw;
+  }
+
+  // -------------------------- LIENS -----------------------------//
+
+  a {
+    font-weight: 500;
+    color: antiquewhite;
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: #D96F15;
+  }
+  
+  
+// -------------------------- BOUTONS -----------------------------//
+  
+  button {
+    border-radius: 8px;
+    border: 1px solid #fff;
+    padding: 0.8em 1.8em;
+    font-size: 0.8em;
+    font-weight: 500;
+    font-family: inherit;
+    // background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    // margin-top: 1rem;
+    background: rgba(255, 255, 255, 0.055);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+    color:#fff ;
+    z-index: 4;
+  }
+  button:hover {
+    border-color: #ff762c;
+    color: #D96F15;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+  
+
+  
+  li{
+    list-style-type: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Tablet */
+@media screen and (min-width: 768px) {
+  
+  button {
+    border-radius: 8px;
+    border: 1px solid #fff;
+    padding: 0.8em 1.8em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    // background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    // margin-top: 1rem;
+    background: rgba(255, 255, 255, 0.055);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+    color:#fff ;
+    z-index: 2;
+  }
+}

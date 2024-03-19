@@ -1,0 +1,97 @@
+@use '../../../public/assets/styles/_settings.scss' as settings;
+
+.single{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.single-project-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+    margin-top: 7rem;
+}
+
+.single-project-container h5{
+    margin-bottom: 2.5rem;
+}
+
+.client-infos-container{
+    width: 80vw;
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.details-app-single{
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-description{
+    width: 70vw;
+    position: absolute;
+}
+
+.recipe-item-list{
+    position: absolute;
+}
+
+@for $i from 0 to 5 {
+    .app-img-container-#{$i} {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      flex: 1;
+
+      .img-app {
+        width: 100%;
+        height: 100%;
+        object-fit:contain;
+        object-position:bottom;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        -webkit-mask-image: url('/assets/images/mockupmobilemask.png');
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+      }
+      
+      .img-single-product-#{$i} {
+        width: 106.5%;
+        height: 106.5%;
+        object-fit: contain;
+        position: absolute;
+        transform: translate(-3%, -3%); /* Centrer l'image horizontalement et verticalement */
+        z-index: 1;
+      }
+    }
+  
+    .app-img-container-#{$i}.active {
+      opacity: 1;
+    }
+    .dots-single-page{
+      top: -1rem!important;
+    }
+  }

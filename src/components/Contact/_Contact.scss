@@ -1,0 +1,160 @@
+@use '../../../public/assets/styles/_settings.scss' as settings;
+
+.contact{
+    width: 100%;
+    // min-height: 100vh;
+}
+
+.contact-infos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-infos-container{
+    width: 46%;
+}
+
+
+
+.horizontal-bloc{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.horizontal-bloc > .social-media-link{
+    width: 20%;
+    margin: 0 1rem;
+    z-index: 2;
+}
+
+.vertical-bloc{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.vertical-bloc > .social-media-link{
+    width: 12%;
+    margin: 1rem 0;
+    z-index: 2;
+}
+
+.socialmedias img{
+    width: 100%;
+}
+
+.socialmedias{
+    width: 100%;
+}
+
+.socialmedias a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-rocket{
+width: 29vw!important;
+margin-bottom: 2rem;
+}
+
+.coffee{
+    width: 50%!important;
+}
+
+.cta-container, .contact-infos-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contact-blocks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.contact-us{
+    width: 100%;
+}
+.cta-container{
+    margin-bottom: 1.5rem;
+}
+
+.contact-us p, .contact-infos p{
+    width: 300px;
+    padding: 0;
+}
+
+.contact-infos p:nth-child(1){
+    font-size: 1.3rem;
+}
+
+@media (min-width: 768px) {
+    .socialmedias{
+        width: 50%;
+    }
+    .horizontal-bloc > .social-media-link{
+        width: 70%;
+        margin: 0 1rem;
+        z-index: 2;
+    }
+    .coffee{
+        width: 40%!important;
+    }
+    .icon-rocket{
+        width: 18vw!important;
+        margin-bottom: 2rem;
+        }
+    .cta-container{
+        margin-bottom: 2.5rem;
+    }
+    .contact-infos p:nth-child(1){
+        font-size: 1.4rem;
+    }
+
+  }
+
+  @media (min-width: 1024px) {
+    .icon-rocket{
+        width: 14vw!important;
+        margin-bottom: 2rem;
+        }
+        .contact-blocks{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-us{
+            width: 35%;
+        }
+        .title-project-contact{
+    width: 100%;
+        }
+        .contact-us p{
+            width: 300px;
+            padding: 0;
+        }
+        .horizontal-bloc > .social-media-link{
+            width: 25%;
+            margin: 0 1rem;
+            z-index: 2;
+        }
+        .cta-container{
+            height: 72vh;
+            justify-content: space-evenly;
+        }
+        .coffee{
+            width: 50%!important;
+        }
+  }
+

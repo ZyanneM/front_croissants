@@ -1,0 +1,93 @@
+@use '../../../public/assets/styles/_settings.scss' as settings;
+
+.equipe{
+        width: 100%;
+        margin: 4rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+.team-cards-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-title::before{
+    content: '';
+    display: block;
+    position: relative;
+    width: 0.6rem;
+    height: 0.2rem;
+    background :rgba(255, 255, 255);
+    top: 1rem;
+    left: 13.2rem;
+    border-radius: 40px;
+    transform: rotate(-30deg);
+}
+
+.team-card-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.team-card-img img{
+    width: 200px;
+}
+
+.team-card-name{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #D96F15;
+}
+
+.team-card-job{
+    font-weight: 600;
+}
+
+.team-card-description{
+    margin-top: 1.5rem;
+    max-width: 300px;
+    text-align: center;
+}
+
+.profile-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+    .team-cards-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .team-card-description{
+        margin-top: 1.5rem;
+        max-width: 180px;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    .profile-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 2vw 3vw;
+
+    }
+}

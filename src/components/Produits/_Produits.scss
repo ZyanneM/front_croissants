@@ -1,0 +1,82 @@
+@use '../../../public/assets/styles/_settings.scss' as settings;
+
+.produits{
+    width: 100vw;
+    // margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 7rem;
+    // margin-bottom: 15rem;
+}
+
+.icon-title{
+    width:41vw!important;
+}
+
+.icon-title-product{
+    opacity: 0;
+}
+
+
+
+.produits-title-transform{
+    width: 50%;
+}
+
+.realisations-title::before{
+    content: '';
+    display: block;
+    position: relative;
+    width: 0.6rem;
+    height: 0.2rem;
+    background :rgba(255, 255, 255);
+    top: 1.3rem;
+    left: 4.8rem;
+    border-radius: 40px;
+    transform: rotate(-30deg);
+}
+
+.div-product{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+
+.produits-title{
+    margin-bottom: 3rem;
+}
+
+
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+    .div-product{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3rem;
+        position: relative;
+    }    
+
+    .icon-title{
+        width:34vw!important;
+    }
+    .icon-title-product{
+        width: 20vw!important;
+    }
+    .produits-title-transform{
+        width: 30%;
+    }
+}

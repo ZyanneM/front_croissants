@@ -1,0 +1,105 @@
+@use '../../../public/assets/styles/_settings.scss' as settings;
+
+.services{
+    @include settings.flexColumn;
+    width: 100%;
+    min-height: 60vh;
+    margin-bottom: 4rem;
+margin-top: 8rem;
+  }
+
+.services li{
+  font-size: 0.7rem;
+}
+
+.service{
+  @include settings.flexColumn;
+  max-height: 40vh;
+}
+
+.missions-container{
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 0px 0px; 
+  justify-items: center; 
+  margin: 3rem 1rem;
+  width: 80vw;
+}
+
+.icon-title{
+  width: 30%;
+}
+
+.lign{
+  display: block;
+  border: none; 
+  width: 75vw;
+    height: 2px; 
+    background-color: #ffffff; 
+    margin-top: 2rem;
+}
+
+.section-title{
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.services-title p {
+  margin: 0;
+  font-size: 0.65rem;
+}
+
+.service-img-container{
+  width: 70%;
+}
+
+.service-img{
+  width: 100%;
+  object-fit: contain;
+}
+
+
+.audit{
+  width: 60%;
+}
+
+
+.service-img-tests {
+  width: 70%;
+}
+// .audit {
+//   width: 60%;
+// }
+
+.chevron{
+  position: relative;
+  top: 4px;
+  margin-right: 15px;
+  width: 8px;
+}
+
+.savoir-faire-img{
+  opacity: 0;
+}
+
+
+@media screen and (min-width: 1024px) {
+
+.missions-container{
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  justify-items: center; 
+  margin: 3rem 1rem;
+}
+.savoir-faire-img{
+  width: 30%;
+  margin-bottom: 3rem;
+}
+.service h2 {
+  font-size: 1.4rem;
+}
+}

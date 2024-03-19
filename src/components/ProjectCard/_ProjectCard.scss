@@ -1,0 +1,758 @@
+@use '../../../public/assets/styles/_settings.scss' as settings;
+
+.recette-title-container{
+    width: 80vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    z-index: 4;
+}
+
+.recette-title-1{
+    font-family: 'Ahay Hore', serif;
+    font-size: 1.5rem!important;
+    position: relative;
+    top: -2vh;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.recette-title-1::before{
+    display: block;
+    position: relative;
+    content: '';
+    top: 1rem;
+    left: 6rem;
+    width: 100px;
+    height: 2px;
+    background: white;
+}
+
+.recette-title-1::after{
+    display: block;
+    position: relative;
+    top: -1.3rem;
+    left: -6rem;
+    content: '';
+    width: 100px;
+    height: 2px;
+    background: white;
+}
+
+.recette-title-2{
+    text-transform: none;
+}
+
+.recette-title-2{
+    display: block;
+    position: relative;
+    top: -1.5rem;
+    content: '';
+    width: 292px;
+    height: 20px;
+    border-bottom: 1px ridge #dfdfdf;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1.2rem!important;
+    font-size: 1.2rem!important;
+}
+
+
+.recette li{
+    max-width: 210px;
+    
+}
+
+.ingredients{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    position: relative;
+    z-index: 4;
+}
+
+.techno-icon-ingredient{
+    width: 20%;
+}
+
+
+.app-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: 50vh;
+  }
+  
+  .app-title-container {
+    position: relative;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+  }
+
+  
+.app-title-container h4{
+  font-size: 2rem;
+  background-image: linear-gradient(to right, #d56d2d,#ff7700 ,#ff8400);
+     -webkit-background-clip: text;
+     -moz-background-clip: text;
+     background-clip: text;
+     color: transparent;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     margin-top: 1rem;
+}
+
+// .app-block::after{
+//   display: block;
+//   position: absolute;
+//   content: '';
+//   width: 93vw;
+//   height: 100%;
+//   background: #f4aaa200;
+//   z-index: 1;
+//   border-radius: 20px;
+//   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.382);
+//   backdrop-filter: blur(5px);
+//   -webkit-backdrop-filter: blur(5px);
+//   border: 1px solid rgba(99, 96, 96, 0.3);
+// }
+  .next-btn,
+  .prev-btn {
+    position: absolute;
+    font-size: 6rem;
+    top: 13vh;
+    right: -10rem;
+  }
+  
+  .prev-btn {
+    left: -10rem;
+    max-width: 2rem;
+  }
+  
+  .dot-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    top: 31vh;
+  }
+
+  .dots-product1{
+    top:31vh;
+  }
+  
+  .slide-dot {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(58, 58, 58);
+    border-radius: 50%;
+    margin: 0 1rem;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  }
+  
+  .slide-dot.active {
+    background-color: rgb(134, 134, 134);
+    width: 25px;
+    height: 25px;
+  }
+  
+  .f-img-container {
+    display: flex;
+    justify-content: center; /* Centre les éléments horizontalement */
+  }
+  
+    @for $i from 0 to 6 {
+      .app-img-container-#{$i} {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        flex: 1;
+      }
+  
+      .img-app {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: bottom;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        -webkit-mask-image: url('/assets/images/mockupmobilemask.png');
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+      }
+  
+      .img-product-#{$i} {
+        width: 108%;
+        height: 108%;
+        object-fit: contain;
+        position: absolute;
+        transform: translate(0, -3%);
+        z-index: 1;
+      }
+  
+      .app-img-container-#{$i}.active {
+        opacity: 1;
+      }
+    }
+  
+
+  .app-img-container-0 {
+    /* Ajustez la valeur de transform pour décaler l'élément avec l'index 0 */
+    // transform: translateX(-200rem);
+}
+
+.bakers-img{
+    width: 10%;
+    margin-right: 2rem;
+}
+
+.recipe-item{
+    width: 62vw;
+    font-size: 0.9rem!important;
+    list-style-type:disc!important;
+}
+
+.recipe-item-list{
+  position: relative;
+}
+
+.app-block{
+  width: 100%;
+  min-height: 50vh;
+    position: relative;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+      background: #f4aaa200;
+  z-index: 1;
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.382);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(99, 96, 96, 0.3);
+  padding: 1.5rem;
+}
+
+.ingredients{
+    margin-top: 1rem;
+}
+
+.ingredients-title-container{
+    width: 80vw;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem!important;
+    z-index: 4;
+ }
+
+.ingredients-title-1{
+    font-family: 'Ahay Hore', serif;
+    font-size: 1.5rem!important;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 4;
+}
+
+.ingredients-title-1::before{
+    display: block;
+    position: relative;
+    top: 1rem;
+    left: 6rem;
+    content: '';
+    width: 100px;
+    height: 2px;
+    background: white;
+}
+
+.ingredients-title-1::after{
+    display: block;
+    position: relative;
+    top: -1.3rem;
+    left: -6rem;
+    content: '';
+    width: 100px;
+    height: 2px;
+    background: white;
+}
+
+.ingredients-title-2{
+    display: block;
+    content: '';
+    width: 292px;
+    height: 20px;
+    font-size: 1.2rem!important;
+    border-bottom: 1px double #dfdfdf;
+    text-align: center;
+    position: relative;
+    top: -0.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 1.2rem!important;
+}
+
+// .bandeau-ingredients{
+//     width: 105vw;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     position: relative;
+//     height: 60px;
+//     margin-top: 1rem;
+//     padding: 0;
+//     background: rgba(255, 255, 255, 0.048);
+//     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+//     border-top: 1px solid rgba(255, 255, 255, 0.3);
+// }
+
+.pitch-technologies{
+    width: 100%;
+    position: absolute;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(18, 206, 175);
+}
+
+
+
+.pitch-technologies p{
+    // width: 20vw;
+    margin: 0 0.9rem;
+    padding: 0 0.5rem!important;
+    white-space: nowrap;
+}
+
+// .pitch-app{
+//     width: 62%;
+//     text-align: justify;
+//     margin: 0;
+//     letter-spacing: -0.5px;
+//     margin-top: 2rem!important;
+// }
+
+.app-presentation{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-description{
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+
+.appstores-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+}
+
+.appstores-container a{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0.5rem;
+}
+
+.appstore-img{
+    width: 100%;
+}
+
+.content-app-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  width: 80%;
+  margin-bottom: 2rem;
+
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+
+ .app-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:static;
+    width: 20%;
+    min-height: 50vh;
+    z-index: 3;
+    }
+
+    .content-app-container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+
+    .app-block{
+      width: 44%;
+      min-height: 25vh;
+        position: relative;
+        margin-top: -2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 5;
+        margin-left: 4rem;
+        background: #f4aaa200;
+        z-index: 1;
+        border-radius: 20px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.382);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(99, 96, 96, 0.3);
+    }
+
+  //   .app-block::after{
+  //     display: block;
+  //     position: absolute;
+  //     content: '';
+  //     width: 45vw;
+  //     height: 100%;
+  //     background: #f4aaa200;
+  //     z-index: 1;
+  //     border-radius: 20px;
+  //     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.382);
+  //     backdrop-filter: blur(5px);
+  //     -webkit-backdrop-filter: blur(5px);
+  //     border: 1px solid rgba(99, 96, 96, 0.3);
+  // }
+
+    .dot-container {
+      top: 33vh;
+    }
+
+    .dots-product1{
+      top: 21vh;
+    }
+
+
+    @for $i from 0 to 6 {
+      .app-img-container-#{$i} {
+        width: 90%;
+        height: 90%;
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        flex: 1;
+      }
+
+      .app-img-container-#{$i} .img-app{
+        width: 100%;
+        height:89%;
+        object-fit: contain;
+        object-position: bottom;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        -webkit-mask-image: url('/assets/images/mockupmobilemask.png');
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+      }
+  
+       .img-product-#{$i} {
+        width: 85%;
+        height: 95%;
+        object-fit: contain;
+        position: absolute;
+        transform: translate(0, -3%);
+        z-index: 1;
+      }
+  
+      .app-img-container-#{$i}.active {
+        opacity: 1;
+      }
+    }
+
+  .recette-title-container{
+    width: 40vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.recipe-item{
+  width: 37vw;
+  font-size: 0.9rem!important;
+  list-style-type:disc!important;
+}
+
+.recipe-item-list{
+position: relative;
+}
+
+.techno-icon-ingredient{
+  width: 17%;
+}
+
+.ingredients{
+  margin-top: 1rem;
+  width: 49vw;
+}
+
+.ingredients-title-container{
+  width: 30vw;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem!important;
+}
+
+.appstores-container a{
+  width: 24%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0.5rem;
+}
+
+.app-title-container {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+  padding-bottom: 1.5rem;
+}
+
+// .app-title-container::before {
+//   display: block;
+//   position: absolute;
+//   content: '';
+//   width: 100vw;
+//   height: 100%;
+//   background: #0c0c0c;
+// // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.382);
+// backdrop-filter: blur(5px);
+// -webkit-backdrop-filter: blur(5px);
+// // border: 1px solid rgba(99, 96, 96, 0.3);
+// }
+
+.app-title-container h5{
+  font-size: 1.2rem;
+  margin: 0.7rem 1rem;
+}
+
+.app-title-container h4{
+  font-size: 3rem;
+  background-image: linear-gradient(to right, #d58c2d,#ff7700 ,#ff8400);
+     -webkit-background-clip: text;
+     -moz-background-clip: text;
+     background-clip: text;
+     color: transparent;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     margin-top: 1rem;
+}
+
+
+
+.app-title-container h5, .app-title-container h4{
+  z-index: 6;
+}
+
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+
+  .app-container {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position:static;
+     width: 20%;
+     min-height: 50vh;
+     }
+ 
+     .content-app-container{
+       display: flex;
+       flex-direction: row;
+       justify-content: space-evenly;
+       align-items: center;
+       position: relative;
+       width: 70%;
+       margin-bottom: 2rem;
+     }
+ 
+ 
+     .app-block{
+       width: 35%;
+       min-height: 25vh;
+         position: relative;
+         margin-top: -2.5rem;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+     }
+ 
+     .dot-container {
+       top: 37vh;
+     }
+
+ 
+   .recette-title-container{
+     width: 40vw;
+     height: auto;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     margin-top: 2rem;
+ }
+ 
+ .recipe-item{
+   width: 37vw;
+   font-size: 1.1rem!important;
+   list-style-type:disc!important;
+ }
+ 
+ .recipe-item-list{
+ position: relative;
+ width: 30%;
+ }
+ 
+ .techno-icon-ingredient{
+   width: 14%;
+ }
+ 
+ .ingredients{
+   margin-top: 1rem;
+   width: 28vw;
+ }
+ 
+ .ingredients-title-container{
+   width: 30vw;
+   height: 5rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 1.5rem!important;
+ }
+ 
+ .appstores-container a{
+   width: 16%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 1rem 0.5rem;
+ }
+ 
+ .app-description{
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+ }
+
+// @for $i from 0 to 5 {
+//     .app-img-container-#{$i} {
+//       width: 53vw;
+//     //   margin: 0 auto;
+//     //   position: absolute;
+//     //   top: 10rem;
+//     //   left: 10rem;
+//       z-index: 1;
+//       margin: 2.5rem auto;
+//     //   scroll-snap-align: start;
+//       opacity: 0;
+//     //   transform: translateX(-200rem);
+//       transition: opacity 0.3s ease-in-out;
+      
+  
+//       .img-app {
+//         width: 50%;
+//         //100%
+//         height: auto;
+//         object-fit: cover;
+//         position: absolute;
+//         top: -1%;
+//         left: 0%;
+//         // transform: translate(-50%, -1%);
+//         z-index: 2;
+//         -webkit-mask-image: url('/assets/images/mockupmobilemask.svg');
+//         -webkit-mask-size: contain;
+//         -webkit-mask-repeat: no-repeat;
+//         -webkit-mask-position: center;
+   
+//       }
+  
+//       .img-product {
+//         width: 50%;
+//         height: auto;
+//         //60vw
+//         object-fit: cover;
+//         position: absolute;
+//         // transform: translate(-50%, 0%);
+//         z-index: 1;
+
+//       }
+
+//     }
+//     .app-img-container-#{$i}.active{
+//         opacity: 1;
+//         // transform: translateX(100%);
+        
+//     }
+//   }
