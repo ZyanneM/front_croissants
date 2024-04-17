@@ -1,0 +1,1 @@
+export const strapiEndpoint = import.meta.env.VITE_REACT_APP_STRAPI_API_ENDPOINT;

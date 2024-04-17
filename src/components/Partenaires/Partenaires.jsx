@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import title from '/assets/images/partenaires.svg';
+import { strapiEndpoint } from '../../config';
 
 const Partenaires = () => {
 
@@ -14,7 +15,7 @@ const Partenaires = () => {
 
     async function fetchComponents() {
         try {
-            const url = 'http://localhost:1337/api/clients-page?populate[0]=title.imagetext&populate[1]=clientCard.image';
+            const url = `${strapiEndpoint}/api/clients-page?populate[0]=title.imagetext&populate[1]=clientCard.image`;
             const response = await fetch(url);
             const data = await response.json();
             const arrayData = data.data
@@ -33,12 +34,12 @@ const Partenaires = () => {
     <div className="partenaires title">
       {clientCards ? (
         <>
-          <img src={`http://localhost:1337${title.imagetext.data.attributes.url}`} className="transformed-title" alt="ils nous font confiance" />
+          <img src={`${strapiEndpoint}${title.imagetext.data.attributes.url}`} className="transformed-title" alt="ils nous font confiance" />
           <p>{content.slogan}</p>
           <div className='client-cards-container'>
             {clientCards.map(clientCard => (
               <div className="client-card-img" key={clientCard.id}>
-                  <img src={`http://localhost:1337${clientCard.image.data.attributes.url}`} alt='' />
+                  <img src={`${strapiEndpoint}${clientCard.image.data.attributes.url}`} alt='' />
               </div>
             ))}
           </div>

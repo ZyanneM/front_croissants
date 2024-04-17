@@ -3,6 +3,7 @@ import ProjectCard from '../ProjectCard/ProjectCard';
 import Gallery from '../Gallery/Gallery';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
+import { strapiEndpoint } from '../../config';
 
 const Produits = () => {
 
@@ -18,7 +19,7 @@ const Produits = () => {
 
     async function fetchComponents() {
         try {
-            const url = 'http://localhost:1337/api/product-page?populate[0]=title.imagetext&populate[1]=title.image';
+            const url = `${strapiEndpoint}/api/product-page?populate[0]=title.imagetext&populate[1]=title.image`;
             const response = await fetch(url);
             const data = await response.json();
             //Il faut récupérer le tableau qui est dans l'objet pour pouvoir lui appliquer la méthode Map
@@ -32,7 +33,7 @@ const Produits = () => {
 
     async function fetchProjects() {
         try {
-            const url = 'http://localhost:1337/api/projects/?populate=images&populate=technologies.image&populate=systems.image&populate=appstore.store.image&populate=functionnalities.functionnality';
+            const url = `${strapiEndpoint}/api/projects/?populate=images&populate=technologies.image&populate=systems.image&populate=appstore.store.image&populate=functionnalities.functionnality`;
             const response = await fetch(url);
             const data = await response.json();
             const arrayData = data.data;
@@ -65,7 +66,7 @@ const Produits = () => {
                 initial={{ opacity: 0, y: -200 }}
                 animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -200 }}
                 transition={{ duration: 1.3 }}
-                src={`http://localhost:1337${title.imagetext.data.attributes.url}`} className="transformed-title produits-title-transform" alt="nos réalisations"/>
+                src={`${strapiEndpoint}${title.imagetext.data.attributes.url}`} className="transformed-title produits-title-transform" alt="nos réalisations"/>
                 <motion.img 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isImgVisible ? 1 : 0 }}

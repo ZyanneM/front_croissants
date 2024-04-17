@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import { strapiEndpoint } from '../../config';
 
 const Gallery = (props) => {
 
@@ -15,7 +16,7 @@ const Gallery = (props) => {
                   <div className='gallery-img-container'>
                     <img
                       className='gallery-img'
-                      src={`http://localhost:1337${project.attributes.images.data[0].attributes.url}`}
+                      src={`${strapiEndpoint}${project.attributes.images.data[0].attributes.url}`}
                       alt={project.attributes.name}
                     />
                   </div>
@@ -23,7 +24,7 @@ const Gallery = (props) => {
                     <p className='gallery-project-subtitle'>{project.attributes.subtitle}</p>
                     <div className='systems'>
                       {project.attributes.systems.data.map(system =>
-                        <img className='systems-img' src={`http://localhost:1337${system.attributes.image.data.attributes.url}`} alt={system.attributes.name}/>
+                        <img className='systems-img' src={`${strapiEndpoint}${system.attributes.image.data.attributes.url}`} alt={system.attributes.name}/>
                       )}
                     </div>
                     <p className='gallery-project-name'>{project.attributes.name}</p>

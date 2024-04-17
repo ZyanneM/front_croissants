@@ -5,6 +5,7 @@ import logoNav from '/assets/images/croissantslogo.svg';
 import logoText from '/assets/images/DigitalBakers.svg';
 import subtitle from '/assets/images/AppsCrafters.svg';
 import logomain from '/assets/images/titremenu.png';
+import { strapiEndpoint } from '../../config';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -57,11 +58,11 @@ const Navbar = () => {
        
       }
 
-      //lien api pour récupérer le menu http://localhost:1337/api/menu?populate[0]=link.style&populate[1]=dropdownmenu.sections.link
+      //lien api pour récupérer le menu ${strapiEndpoint}/api/menu?populate[0]=link.style&populate[1]=dropdownmenu.sections.link
 
       async function fetchComponents() {
         try {
-            const response = await fetch('http://localhost:1337/api/menu?populate[0]=link.style&populate[1]=dropdownmenu.sections.link&populate[2]=link.icon');
+            const response = await fetch(`${strapiEndpoint}/api/menu?populate[0]=link.style&populate[1]=dropdownmenu.sections.link&populate[2]=link.icon`);
             const data = await response.json();
             //Il faut récupérer le tableau qui est dans l'objet pour pouvoir lui appliquer la méthode Map
             const arrayData = data.data
@@ -133,7 +134,7 @@ const Navbar = () => {
             {links.map(link => (
               <li key={link.label}>
                 <a href={`/${link.anchor}`} className="navitem" onClick={toggleMenuSelect}>
-                  <img  className="icon-menu-img" src={`http://localhost:1337${link.icon.data.attributes.url}`} alt="" />{link.label}</a>
+                  <img  className="icon-menu-img" src={`${strapiEndpoint}${link.icon.data.attributes.url}`} alt="" />{link.label}</a>
               </li>
             ))}
           </ul>

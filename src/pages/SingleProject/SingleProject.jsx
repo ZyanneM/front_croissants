@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
-
+import { strapiEndpoint } from '../../config';
 import { useParams } from 'react-router-dom';
 import Navbar from '../../components/NavBar/Navbar';
 
@@ -19,7 +19,7 @@ const SingleProject = () => {
 
     async function fetchProject() {
         try {
-            const url = `http://localhost:1337/api/projects/${id}?populate=images&populate=technologies.image&populate=systems.image&populate=appstore.store.image&populate=functionnalities.functionnality`;
+            const url = `${strapiEndpoint}/api/projects/${id}?populate=images&populate=technologies.image&populate=systems.image&populate=appstore.store.image&populate=functionnalities.functionnality`;
             const response = await fetch(url);
             const data = await response.json();
             const arrayData = data.data;
@@ -50,8 +50,8 @@ const SingleProject = () => {
                       >
                         <img
                           className="img-app"
-                          src={`http://localhost:1337${imageData.attributes.url}`}
-                          alt={`http://localhost:1337${imageData.attributes.alternativeText}`}
+                          src={`${strapiEndpoint}${imageData.attributes.url}`}
+                          alt={`${strapiEndpoint}${imageData.attributes.alternativeText}`}
                         />
                         <img
                           className={`img-single-product-${index}`}
@@ -87,8 +87,8 @@ const SingleProject = () => {
                       {projectCard.attributes.technologies.data.map((technoData) => (
                         <img
                           className="techno-icon-ingredient"
-                          src={`http://localhost:1337${technoData.attributes.image.data.attributes.url}`}
-                          alt={`http://localhost:1337${technoData.attributes.image.data.attributes.alternativeText}`}
+                          src={`${strapiEndpoint}${technoData.attributes.image.data.attributes.url}`}
+                          alt={`${strapiEndpoint}${technoData.attributes.image.data.attributes.alternativeText}`}
                         />
                       ))}
                     </div>
@@ -107,7 +107,7 @@ const SingleProject = () => {
                     <div className='appstores-container'>
                     {projectCard.attributes.appstore.map(storeData =>
                     <a href={storeData.link} target='blank'>
-                        <img className='appstore-img'  src={`http://localhost:1337${storeData.store.data.attributes.image.data.attributes.url}`} alt={`http://localhost:1337${storeData.store.data.attributes.image.data.attributes.alternativeText}`} />
+                        <img className='appstore-img'  src={`${strapiEndpoint}${storeData.store.data.attributes.image.data.attributes.url}`} alt={`${strapiEndpoint}${storeData.store.data.attributes.image.data.attributes.alternativeText}`} />
                     </a>
                         
                         )}

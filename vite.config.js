@@ -1,8 +1,21 @@
 import react from '@vitejs/plugin-react';
-import sass from 'vite-plugin-sass';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [react(), sass()],
+  plugins: [react()],
   envPrefix: 'VITE_',
+  server: {
+    host: '0.0.0.0', // Écoute sur toutes les interfaces réseau
+    port: 5173,
+    fs: {
+      allow: ['/app']
+    }
+  },
+  preview: {
+    host: '0.0.0.0', // Écoute sur toutes les interfaces réseau
+    port: 5173,
+    fs: {
+      allow: ['/app']
+    }
+  }
 });

@@ -88,16 +88,13 @@
   cursor: inherit;
   line-height: inherit;
 
-   // Stack above custom arrow
    z-index: 1;
 
-   // Remove dropdown arrow in IE10 & IE11
-   // @link https://www.filamentgroup.com/lab/select-css.html
+
    &::-ms-expand {
      display: none;
    }
- 
-   // Remove focus outline, will add on alternate element
+
    outline: none;
 
    border: none;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { strapiEndpoint } from '../../config';
 import logo from '/assets/images/croissantslogo.svg';
 import logoText from '/assets/images/DigitalBakers.svg';
 import subtitle from '/assets/images/AppsCrafters.svg';
@@ -23,7 +24,7 @@ const Homepage = () => {
   async function fetchComponents() {
     try {
       const response = await fetch(
-        'http://localhost:1337/api/homepage?populate[0]=nameImage&populate[1]=subtitleImage&populate[2]=logo.image&populate[3]=sloganSpan&populate[4]=socialmedias.socialmedia.image'
+        `${strapiEndpoint}/api/homepage?populate[0]=nameImage&populate[1]=subtitleImage&populate[2]=logo.image&populate[3]=sloganSpan&populate[4]=socialmedias.socialmedia.image`
       );
       const data = await response.json();
       const arrayData = data.data;
@@ -81,14 +82,14 @@ const Homepage = () => {
           </div>
           <div className="home-content">
                     <img
-                      src={`http://localhost:1337${logo.data.attributes.url}`}
+                      src={`${strapiEndpoint}${logo.data.attributes.url}`}
                       className="logo"
                       alt="croissant logo"
                     />
                     <div className="title-container">
                       <div className="main-title">
                         <img
-                          src={`http://localhost:1337${nameImage.data.attributes.url}`}
+                          src={`${strapiEndpoint}${nameImage.data.attributes.url}`}
                           className="logo-text"
                           alt="digital bakers"
                         />
@@ -97,7 +98,7 @@ const Homepage = () => {
 
                     <div className="main-subtitle">
                       <img
-                        src={`http://localhost:1337${subtitleImage.data.attributes.url}`}
+                        src={`${strapiEndpoint}${subtitleImage.data.attributes.url}`}
                         className="logo-subtitle"
                         alt="apps crafters since 2020"
                       />
@@ -128,7 +129,7 @@ const Homepage = () => {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src={`http://localhost:1337${socialmedia.image.data.attributes.url}`}
+                    src={`${strapiEndpoint}${socialmedia.image.data.attributes.url}`}
                     alt=""
                   />
                 </a>

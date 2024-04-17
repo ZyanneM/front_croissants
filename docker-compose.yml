@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  web:
+    container_name: front_croissants
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    networks:
+      - croissants
+
+networks:
+  croissants:
+    external:
+      name: croissants

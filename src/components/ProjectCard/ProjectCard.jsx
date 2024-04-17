@@ -1,10 +1,12 @@
 import React, {useState, useEffect, useRef} from 'react';
 import { Link } from 'react-router-dom';
+import { strapiEndpoint } from '../../config';
 
 const ProjectCard = (props) => {
 
 const [currentSlide, setCurrentSlide] = useState(0);
 const appContainerRefs = props.imagesData.map(() => useRef(null));
+console.log('STRAPIPOINT', strapiEndpoint);
 
     return (
         <>
@@ -18,7 +20,7 @@ const appContainerRefs = props.imagesData.map(() => useRef(null));
                     <>
                         <div className={`app-img-container-${index} ${index === currentSlide ? 'active' : ''} f-img-container `} key={index} ref={appContainerRefs[index]}>
                             <img className={`img-product-${index}`} src="/assets/images/mockupapplication.png" alt="mobile phone app" />
-                            <img className= "img-app" src={`http://localhost:1337${imageData.attributes.url}`} alt={`http://localhost:1337${imageData.attributes.alternativeText}`} />
+                            <img className= "img-app" src={`${strapiEndpoint}${imageData.attributes.url}`} alt={`${strapiEndpoint}${imageData.attributes.alternativeText}`} />
                         </div>
                     </>
                     )}
@@ -37,7 +39,7 @@ const appContainerRefs = props.imagesData.map(() => useRef(null));
             </div>
             <div className='ingredients'>
                 { props.technosData.map(technoData =>
-                     <img className= "techno-icon-ingredient" src={`http://localhost:1337${technoData.attributes.image.data.attributes.url}`} alt={`http://localhost:1337${technoData.attributes.image.data.attributes.alternativeText}`} />
+                     <img className= "techno-icon-ingredient" src={`${strapiEndpoint}${technoData.attributes.image.data.attributes.url}`} alt={`${strapiEndpoint}${technoData.attributes.image.data.attributes.alternativeText}`} />
                     )}
             </div>
             <div className='recette-title-container'>
@@ -56,7 +58,7 @@ const appContainerRefs = props.imagesData.map(() => useRef(null));
             <div className='appstores-container'>
                     {props.storesData.map(storeData =>
                     <a href={storeData.link} target='blank'>
-                        <img className='appstore-img'  src={`http://localhost:1337${storeData.store.data.attributes.image.data.attributes.url}`} alt={`http://localhost:1337${storeData.store.data.attributes.image.data.attributes.alternativeText}`} />
+                        <img className='appstore-img'  src={`${strapiEndpoint}${storeData.store.data.attributes.image.data.attributes.url}`} alt={`${strapiEndpoint}${storeData.store.data.attributes.image.data.attributes.alternativeText}`} />
                     </a>
                         
                         )}
@@ -82,7 +84,7 @@ export default ProjectCard;
 //                 <>
 //                     <div className={`app-img-container-${index} ${index === currentSlide ? 'active' : ''} f-img-container ${props.index === 0 ? 'div-product1' : ''}`} key={index} ref={appContainerRefs[index]}>
 //                         <img className={`img-product-${index}`} src="/assets/images/mockupapplication.png" alt="mobile phone app" />
-//                         <img className= "img-app" src={`http://localhost:1337${imageData.attributes.url}`} alt={`http://localhost:1337${imageData.attributes.alternativeText}`} />
+//                         <img className= "img-app" src={`${strapiEndpoint}${imageData.attributes.url}`} alt={`${strapiEndpoint}${imageData.attributes.alternativeText}`} />
 //                     </div>
 //                 </>
 //                 )}
@@ -101,7 +103,7 @@ export default ProjectCard;
 //         </div>
 //         <div className='ingredients'>
 //             { props.technosData.map(technoData =>
-//                  <img className= "techno-icon-ingredient" src={`http://localhost:1337${technoData.attributes.image.data.attributes.url}`} alt={`http://localhost:1337${technoData.attributes.image.data.attributes.alternativeText}`} />
+//                  <img className= "techno-icon-ingredient" src={`${strapiEndpoint}${technoData.attributes.image.data.attributes.url}`} alt={`${strapiEndpoint}${technoData.attributes.image.data.attributes.alternativeText}`} />
 //                 )}
 //         </div>
 //         <div className='recette-title-container'>
@@ -120,7 +122,7 @@ export default ProjectCard;
 //         <div className='appstores-container'>
 //                 {props.storesData.map(storeData =>
 //                 <a href={storeData.link} target='blank'>
-//                     <img className='appstore-img'  src={`http://localhost:1337${storeData.store.data.attributes.image.data.attributes.url}`} alt={`http://localhost:1337${storeData.store.data.attributes.image.data.attributes.alternativeText}`} />
+//                     <img className='appstore-img'  src={`${strapiEndpoint}${storeData.store.data.attributes.image.data.attributes.url}`} alt={`${strapiEndpoint}${storeData.store.data.attributes.image.data.attributes.alternativeText}`} />
 //                 </a>
                     
 //                     )}

@@ -4,6 +4,7 @@ import {
 } from 'react-google-recaptcha-v3';
 import DOMPurify from 'dompurify';
 import './ContactForm.css'
+import { strapiEndpoint } from '../../config';
 import axios from 'axios';
 
 const ContactForm = () => {
@@ -84,7 +85,7 @@ useEffect(() => {
         const sanitizedMessage = DOMPurify.sanitize(message);
   
 
-        const response = await axios.post('http://localhost:1337/api/contact-request/createMessage', {
+        const response = await axios.post(`${strapiEndpoint}/api/contact-request/createMessage`, {
             name: sanitizedName,
             email: sanitizedEmail,
             subject: subject,

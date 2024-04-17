@@ -1,33 +1,17 @@
 @use "./settings";
-@use "./src/pages/Mainpage/_MainPage.scss";
-@use "./src/components/Homepage/_Homepage.scss";
-@use "./src/components/SavoirFaire/_Services.scss";
-@use "./src/components/Produits/_Produits.scss";
-@use "./src/components/Equipe/_Equipe.scss";
-@use "./src/components/Partenaires/_Partenaires.scss";
-@use "./src/components/Expertise/_Expertise.scss";
-@use "./src/pages/ContactForm/_ContactForm.scss";
-@use "./src/pages/SingleProject/_SingleProject.scss";
-@use "./src/pages/ProductPage/_ProductPage.scss";
-@use "./src/pages/ExpertisePage/_ExpertisePage.scss";
-@use "./src/components/Navbar/_Navbar.scss";
-@use "./src/components/Gallery/_Gallery.scss";
-@use "./src/components/Contact/_Contact.scss";
-@use "./src/components/ProjectCard/_ProjectCard.scss";
-@use "./src/components/Footer/_Footer.scss";
-
-
-  
-  /* @media (prefers-color-scheme: light) {
-    :root {
-      color: #213547;
-      background-color: #ffffff;
-    }
-    a:hover {
-      color: #747bff;
-    }
-    button {
-      background-color: #f9f9f9;
-    }
-  } */
-  
+@use "../../../src/pages/MainPage/MainPage.scss";
+@use "../../../src/components/Homepage/Homepage.scss";
+@use "../../../src/components/SavoirFaire/Services";
+@use "../../../src/components/Produits/Produits";
+@use "../../../src/components/Equipe/Equipe";
+@use "../../../src/components/Partenaires/Partenaires";
+@use "../../../src/components/Expertise/Expertise";
+@use "../../../src/pages/ContactForm/ContactForm";
+@use "../../../src/pages/SingleProject/SingleProject";
+@use "../../../src/pages/ProductPage/ProductPage";
+@use "../../../src/pages/ExpertisePage/ExpertisePage";
+@use "../../../src/components/NavBar/Navbar";
+@use "../../../src/components/Gallery/Gallery";
+@use "../../../src/components/Contact/Contact";
+@use "../../../src/components/ProjectCard/ProjectCard";
+@use "../../../src/components/Footer/Footer";

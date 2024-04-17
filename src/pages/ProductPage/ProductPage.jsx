@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import Navbar from '../../components/NavBar/Navbar';
 import Gallery from '../../components/Gallery/Gallery';
 import Contact from '../../components/Contact/Contact';
+import { strapiEndpoint } from '../../config';
 import { motion } from "framer-motion";
 
 const ProductPage = () => {
@@ -23,7 +24,7 @@ const ProductPage = () => {
 
     async function fetchComponents() {
         try {
-            const url = 'http://localhost:1337/api/product-page?populate[0]=title.imagetext&populate[1]=title.image';
+            const url = `${strapiEndpoint}/api/product-page?populate[0]=title.imagetext&populate[1]=title.image`;
             const response = await fetch(url);
             const data = await response.json();
             //Il faut récupérer le tableau qui est dans l'objet pour pouvoir lui appliquer la méthode Map
@@ -37,7 +38,7 @@ const ProductPage = () => {
 
     async function fetchProjects() {
         try {
-            const url = 'http://localhost:1337/api/projects?populate=images&populate=technologies.image&populate=systems.image&populate=appstore.store.image';
+            const url = `${strapiEndpoint}/api/projects?populate=images&populate=technologies.image&populate=systems.image&populate=appstore.store.image`;
             const response = await fetch(url);
             const data = await response.json();
             //Il faut récupérer le tableau qui est dans l'objet pour pouvoir lui appliquer la méthode Map
@@ -71,7 +72,7 @@ const ProductPage = () => {
             <Navbar />
             <div className='single-product-page'>
               <div ref={produitsRef} className="produits title">
-                <img src={`http://localhost:1337${title.imagetext.data.attributes.url}`} className="transformed-title" alt="nos réalisations" />
+                <img src={`${strapiEndpoint}${title.imagetext.data.attributes.url}`} className="transformed-title" alt="nos réalisations" />
                 <img className="icon-title" src="/assets/images/realisations-icon.png" alt="mobile phone under cloche" />
                 {/* <hr className='lign'/> */}
                 <p>Des applications aux pépites d'innovation</p>

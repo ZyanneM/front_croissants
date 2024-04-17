@@ -78,7 +78,6 @@ header {
     transform: translateX(-1.4rem);
     padding-bottom: 1rem;
     text-transform:none;
-    /* min-width: 10em; */
   }
 
   .under-nav a:hover{
@@ -104,8 +103,6 @@ header {
 .navbar-mobile{
   width: 100vw;
   height: 12vh;
-//  background-color: #0f0f0f4d;
-//  background-color: #111111;
 background: #171819;
  display: flex;
  flex-direction: row;
@@ -274,7 +271,6 @@ background: #171819;
   width: 100%;
   min-height: 100vh;
   background-color: #18191a;
-  /* border: 2px solid rgba(255, 255, 255, 0.1); */
   border-radius: 0 0 10px 10px;
   backdrop-filter: blur(0.18em);
   transition: ease-in-out;
@@ -394,14 +390,6 @@ background: #171819;
             filter: blur(0);
     opacity: 1;
   }
-}
-
-
-
-
-@media only screen and (max-width: 635px) and (orientation: portrait) {
-  
-
 }
 
 @media only screen and (min-width: 768px) {
